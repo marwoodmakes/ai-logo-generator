@@ -14,7 +14,7 @@ const port = process.env.PORT || 3000;
 // - If your store URL is 'https://krestly.myshopify.com', use that.
 // - If you have a custom domain 'https://www.krestly.com', use that.
 app.use(cors({
-  origin: 'https://krestly.myshopify.com',
+  origin: 'https://krestly.com',
   methods: ['POST', 'GET', 'OPTIONS'], // Explicitly allow methods needed for your API
   credentials: true // If you were sending cookies/authentication headers (optional, but good practice)
 }));
