@@ -9,12 +9,12 @@ const port = process.env.PORT || 3000;
 
 // --- IMPORTANT UPDATE FOR CORS ---
 // Configure CORS to only allow requests from your Shopify store's domain.
-// REPLACE 'https://YOUR_SHOPIFY_STORE_DOMAIN.myshopify.com' with your actual Shopify URL.
+// REPLACE 'https://krestly.myshopify.com' with your actual Shopify URL.
 // Examples:
-// - If your store URL is 'https://my-awesome-store.myshopify.com', use that.
-// - If you have a custom domain 'https://www.my-brand-store.com', use that.
+// - If your store URL is 'https://krestly.myshopify.com', use that.
+// - If you have a custom domain 'https://www.krestly.com', use that.
 app.use(cors({
-  origin: 'https://YOUR_SHOPIFY_STORE_DOMAIN.myshopify.com',
+  origin: 'https://krestly.myshopify.com',
   methods: ['POST', 'GET', 'OPTIONS'], // Explicitly allow methods needed for your API
   credentials: true // If you were sending cookies/authentication headers (optional, but good practice)
 }));
