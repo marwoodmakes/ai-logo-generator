@@ -7,18 +7,14 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-// --- IMPORTANT UPDATE FOR CORS ---
-// Configure CORS to only allow requests from your Shopify store's domain.
-// REPLACE 'https://krestly.myshopify.com' with your actual Shopify URL.
-// Examples:
-// - If your store URL is 'https://krestly.myshopify.com', use that.
-// - If you have a custom domain 'https://www.krestly.com', use that.
+// --- CRITICAL UPDATE FOR CORS ---
+// Configure CORS to allow both versions of your custom domain.
 app.use(cors({
-  origin: 'https://krestly.com',
-  methods: ['POST', 'GET', 'OPTIONS'], // Explicitly allow methods needed for your API
-  credentials: true // If you were sending cookies/authentication headers (optional, but good practice)
+  origin: ['https://www.krestly.com', 'https://krestly.com', 'https://krestly.myshopify.com'], // <--- UPDATED LINE!
+  methods: ['POST', 'GET', 'OPTIONS'],
+  credentials: true
 }));
-// --- END IMPORTANT UPDATE ---
+// --- END CRITICAL UPDATE ---
 
 app.use(express.json());
 
